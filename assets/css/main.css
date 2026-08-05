@@ -1,18 +1,23 @@
 /* ---------------------------------------------------------------- tokens */
 
-:root {
-  --paper: #fbf3e4;
-  --paper-raised: #fffaf0;
-  --ink: #17130d;
-  --ink-soft: #5c5346;
-  --rule: #17130d;
-  --accent: #c8332a;
-  --accent-ink: #fff6ee;
-  --violet: #5b3fc4;
-  --violet-ink: #f4f0ff;
-  --gold: #f0c419;
+/* Paper in every context — no dark-mode variant. The site is meant to read like
+   a printed case file, and a cream page does that on any device. */
 
-  --shadow: 6px 6px 0 var(--rule);
+:root {
+  color-scheme: light;
+
+  --paper: #fdf9f0;
+  --paper-raised: #fffefa;
+  --ink: #2b2419;
+  --ink-soft: #6f6555;
+  --rule: #3a3229;
+  --accent: #cc4a3d;
+  --accent-ink: #fffaf5;
+  --violet: #6a5ac9;
+  --violet-ink: #f8f6ff;
+  --highlight: #fbeaa9;
+
+  --shadow: 5px 5px 0 var(--rule);
   --shadow-sm: 4px 4px 0 var(--rule);
   --shadow-xs: 3px 3px 0 var(--rule);
 
@@ -21,18 +26,6 @@
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --wrap: 46rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #15120e;
-    --paper-raised: #221d16;
-    --ink: #f6efe1;
-    --ink-soft: #b5aa96;
-    --rule: #000;
-    --accent: #e8574c;
-    --violet: #8d76ec;
-  }
 }
 
 *,
@@ -46,7 +39,7 @@
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: radial-gradient(circle at 1px 1px, rgb(23 19 13 / 6%) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgb(43 36 25 / 4%) 1px, transparent 0);
   background-size: 22px 22px;
   color: var(--ink);
   font-family: var(--body);
@@ -294,11 +287,7 @@ a {
 }
 
 .prose strong {
-  padding: 0 0.15em;
-  background: var(--gold);
-  color: #17130d;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  background: linear-gradient(transparent 55%, var(--highlight) 55%);
 }
 
 /* -------------------------------------------------------------- suspects */
@@ -321,8 +310,8 @@ a {
 }
 
 .block-heading--clues {
-  background: var(--gold);
-  color: #17130d;
+  background: var(--ink);
+  color: var(--paper-raised);
 }
 
 .suspects__grid {
@@ -418,11 +407,10 @@ a {
   place-items: center;
   width: 1.6rem;
   height: 1.6rem;
-  background: var(--gold);
+  background: var(--paper);
   border: 2px solid var(--rule);
   font-family: var(--display);
   font-size: 0.8rem;
-  color: #17130d;
 }
 
 .clues__list li:last-child {
