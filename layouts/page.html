@@ -10,6 +10,9 @@
       {{ with .Params.victim }}
         <div><dt>Victim</dt><dd>{{ . }}</dd></div>
       {{ end }}
+      {{ with .Params.missing }}
+        <div><dt>Missing</dt><dd>{{ . }}</dd></div>
+      {{ end }}
       <div><dt>Difficulty</dt><dd>{{ partial "difficulty.html" (.Params.difficulty | default 1) }}</dd></div>
     </dl>
   </header>
