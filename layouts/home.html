@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="wrap">
+  {{ with .Content }}<div class="intro prose">{{ . }}</div>{{ end }}
+
+  <h2 class="section-heading">The Case Files</h2>
+  <ul class="case-grid">
+    {{ range where site.RegularPages "Section" "mysteries" }}
+      {{ partial "case-card.html" . }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

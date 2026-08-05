@@ -1,0 +1,11 @@
+<li class="case-card">
+  <a class="case-card__link" href="{{ .RelPermalink }}">
+    <span class="case-card__label">Case File</span>
+    <h3 class="case-card__title">{{ .Title }}</h3>
+    {{ with .Params.setting }}<p class="case-card__setting">{{ . }}</p>{{ end }}
+    <span class="case-card__meta">
+      {{ partial "difficulty.html" (.Params.difficulty | default 1) }}
+      <span class="case-card__cta">Open the file →</span>
+    </span>
+  </a>
+</li>

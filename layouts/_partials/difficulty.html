@@ -1,0 +1,7 @@
+{{- $level := cond (gt . 0) . 1 -}}
+<span class="difficulty" title="Difficulty {{ $level }} of 3">
+  <span class="sr-only">Difficulty: {{ $level }} out of 3</span>
+  {{- range seq 3 -}}
+    <span class="difficulty__pip{{ if le . $level }} is-filled{{ end }}" aria-hidden="true">🔍</span>
+  {{- end -}}
+</span>

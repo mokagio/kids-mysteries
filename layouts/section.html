@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="wrap">
+  <h1 class="section-heading">{{ .Title }}</h1>
+  {{ with .Content }}<div class="intro prose">{{ . }}</div>{{ end }}
+
+  <ul class="case-grid">
+    {{ range .Pages }}
+      {{ partial "case-card.html" . }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

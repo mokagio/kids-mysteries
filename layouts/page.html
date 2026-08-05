@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="wrap case">
+  <header class="case-header">
+    <p class="case-header__label">Case File</p>
+    <h1 class="case-header__title">{{ .Title }}</h1>
+    <dl class="case-header__facts">
+      {{ with .Params.setting }}
+        <div><dt>Where</dt><dd>{{ . }}</dd></div>
+      {{ end }}
+      {{ with .Params.victim }}
+        <div><dt>Victim</dt><dd>{{ . }}</dd></div>
+      {{ end }}
+      <div><dt>Difficulty</dt><dd>{{ partial "difficulty.html" (.Params.difficulty | default 1) }}</dd></div>
+    </dl>
+  </header>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <nav class="case-nav">
+    <a href="{{ "/" | relURL }}">← Back to the case files</a>
+  </nav>
+</article>
+{{ end }}

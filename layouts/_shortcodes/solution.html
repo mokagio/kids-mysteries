@@ -1,0 +1,20 @@
+<section class="solution">
+  <details class="reveal reveal--who">
+    <summary class="reveal__button">
+      <span class="reveal__chevron" aria-hidden="true">▸</span>
+      <span>Who did it?</span>
+    </summary>
+    <div class="reveal__body">
+      <p class="reveal__culprit">{{ .Get "culprit" }}</p>
+      <details class="reveal reveal--why">
+        <summary class="reveal__button reveal__button--secondary">
+          <span class="reveal__chevron" aria-hidden="true">▸</span>
+          <span>But how do we know?</span>
+        </summary>
+        <div class="reveal__body prose">
+          {{ .Inner | markdownify }}
+        </div>
+      </details>
+    </div>
+  </details>
+</section>

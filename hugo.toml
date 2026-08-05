@@ -1,0 +1,15 @@
+baseURL = "/"
+locale = "en-au"
+title = "The Case Files"
+
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+tagline = "Mysteries for budding detectives"
+
+[markup.goldmark.renderer]
+unsafe = false
+
+[markup.tableOfContents]
+startLevel = 2
