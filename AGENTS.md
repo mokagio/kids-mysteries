@@ -4,6 +4,7 @@ A static site generated with Hugo to collect simple mysteries for budding detect
 
 ```sh
 hugo server              # dev server on http://localhost:1313, live reload
+hugo server -D           # ...including shelved cases (draft: true)
 hugo --gc --minify       # production build into public/
 ```
 
@@ -18,8 +19,8 @@ One file per case: `content/mysteries/<slug>.md`.
 title: The Lighthouse at Gull Point
 date: 2026-08-05
 setting: A lighthouse on a tidal rock
-victim: Captain Sloat
-difficulty: 2   # 1–3, rendered as magnifying glasses
+victim: Captain Sloat    # or `missing:` for a theft — the header labels itself
+difficulty: 2            # 1–3, rendered as magnifying glasses
 ---
 
 Scene-setting prose. Wrap the key fact in **bold** to highlight it.
@@ -49,6 +50,21 @@ Shortcode bodies use `{{<` (not `{{%`), so inner content is passed through `mark
 in the shortcode template rather than by the page renderer.
 Suspect numbering comes from `.Ordinal`, so cards number themselves in source order.
 
+Set `draft: true` to shelve a case that isn't working, rather than deleting it,
+and say why in a comment above the key.
+
+## Writing a case that holds up
+
+Aim between "solvable at a glance" and "needs a second inference on top of the
+elimination" — every suspect but one is cleared by a clue a child can check,
+and the culprit is caught by contradicting themselves.
+
+Test every alibi against the clock before publishing.
+Establish when the crime *started* as well as when it was discovered, or a suspect
+whose alibi begins a few minutes late is left with an unexamined gap.
+And check that alibis aren't circular: if A vouches for B and B vouches for A,
+neither is cleared — bring in a third witness.
+
 ## The solution reveal
 
 `layouts/_shortcodes/solution.html` renders **nested `<details>`**: the outer one
@@ -61,10 +77,13 @@ It hides spoilers from a reader, not from anyone who opens the page source.
 
 ## Design
 
-The look is Murdle-inspired: cream paper, thick black borders, hard offset shadows,
+The look is Murdle-inspired: cream paper, charcoal borders, hard offset shadows,
 heavy uppercase display type, monospace for clues so they read as evidence.
 All of it lives in `assets/css/main.css` behind custom properties at the top —
 change the palette there, not in the rules.
+
+There is no dark mode, deliberately: the site should read like a printed case file
+on any device.
 
 Fonts are system stacks on purpose: the site makes no network requests at build or
 runtime, so it works offline and on a plane.
