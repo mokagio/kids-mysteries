@@ -2,6 +2,10 @@ baseURL = "/"
 locale = "en-au"
 title = "The Case Files"
 
+# Without this, a front matter `date: 2026-08-06` is read as UTC midnight, which is
+# still in the future here — and Hugo drops future-dated pages from the build.
+timeZone = "Australia/Melbourne"
+
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
