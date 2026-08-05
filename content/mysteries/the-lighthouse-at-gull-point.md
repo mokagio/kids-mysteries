@@ -1,9 +1,15 @@
 ---
+# Shelved, not deleted. Two problems to fix before this goes live:
+#   - Too hard: four suspects, and the notebook clue needs a second inference on
+#     top of the elimination.
+#   - Clue 4 doesn't hold up: nobody explains who bolted the cook in, or why.
+# Build it with `hugo server -D` to see it.
+draft: true
 title: The Lighthouse at Gull Point
 date: 2026-08-05
 setting: A lighthouse on a tidal rock
 victim: Captain Sloat
-difficulty: 2
+difficulty: 3
 ---
 
 Captain Sloat was found at the top of his lighthouse, 199 steps up, beside a brass telescope with a dent in it.
