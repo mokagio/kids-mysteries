@@ -14,10 +14,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="site-title" href="{{ "/" | relURL }}">
-      <span class="site-title__mark" aria-hidden="true">🔍</span>
-      <span>{{ site.Title }}</span>
-    </a>
+    <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
     <p class="site-tagline">{{ site.Params.tagline }}</p>
   </header>
 
@@ -26,7 +23,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>Case closed. {{ now.Format "2006" }}</p>
+    <p>
+      Inspired by <a href="https://murdle.com">Murdle</a>.
+      Generated with the help of LLMs.
+    </p>
   </footer>
 </body>
 </html>

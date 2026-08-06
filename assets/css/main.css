@@ -97,9 +97,7 @@ a {
 }
 
 .site-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   font-family: var(--display);
   font-size: clamp(1.6rem, 6vw, 2.5rem);
   letter-spacing: 0.06em;
@@ -107,11 +105,6 @@ a {
   color: var(--accent-ink);
   text-decoration: none;
   text-shadow: 3px 3px 0 var(--rule);
-}
-
-.site-title__mark {
-  text-shadow: none;
-  transform: rotate(-12deg);
 }
 
 .site-tagline {
@@ -136,6 +129,10 @@ a {
 
 .site-footer p {
   margin: 0;
+}
+
+.site-footer a {
+  text-underline-offset: 0.25em;
 }
 
 /* ------------------------------------------------------------------ home */
