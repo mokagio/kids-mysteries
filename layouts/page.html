@@ -4,6 +4,9 @@
     <p class="case-header__label">Case File</p>
     <h1 class="case-header__title">{{ .Title }}</h1>
     <dl class="case-header__facts">
+      {{ if not .Date.IsZero }}
+        <div><dt>Filed</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></dd></div>
+      {{ end }}
       {{ with .Params.setting }}
         <div><dt>Where</dt><dd>{{ . }}</dd></div>
       {{ end }}

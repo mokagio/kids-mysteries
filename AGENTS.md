@@ -37,7 +37,7 @@ One file per case: `content/mysteries/<slug>.md`.
 ```markdown
 ---
 title: The Lighthouse at Gull Point
-date: 2026-08-05
+date: 2026-08-05         # shown as "Filed", and orders the home page
 setting: A lighthouse on a tidal rock
 victim: Captain Sloat    # or `missing:` for a theft — the header labels itself
 difficulty: 2            # 1–3, rendered as magnifying glasses

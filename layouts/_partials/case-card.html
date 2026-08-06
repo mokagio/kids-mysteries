@@ -1,6 +1,9 @@
 <li class="case-card">
   <a class="case-card__link" href="{{ .RelPermalink }}">
-    <span class="case-card__label">Case File</span>
+    <span class="case-card__label">
+      Case File
+      {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">· {{ .Date.Format "2 Jan 2006" }}</time>{{ end }}
+    </span>
     <h3 class="case-card__title">{{ .Title }}</h3>
     {{ with .Params.setting }}<p class="case-card__setting">{{ . }}</p>{{ end }}
     <span class="case-card__meta">
