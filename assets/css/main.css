@@ -314,10 +314,12 @@ a {
   color: var(--paper-raised);
 }
 
+/* 12.5rem lets the three suspects a case is allowed sit in one row on a desktop
+   rather than wrapping to a lonely third card. */
 .suspects__grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
@@ -347,6 +349,19 @@ a {
   font-size: 0.9rem;
 }
 
+.suspect__head {
+  margin-bottom: 0.85rem;
+}
+
+/* Stacked rather than beside the name: at three-across the cards are narrow, and
+   an inline emoji pushes the role label onto a second line. */
+.suspect__emoji {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
 .suspect__name {
   margin: 0;
   font-family: var(--display);
@@ -356,7 +371,7 @@ a {
 }
 
 .suspect__role {
-  margin: 0.15rem 0 0.75rem;
+  margin: 0.15rem 0 0;
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
@@ -419,6 +434,43 @@ a {
 
 .clues__list li p {
   margin: 0;
+}
+
+/* -------------------------------------------------------------- glossary */
+
+/* Tap a hard word, get a definition card. `popover` puts the card in the top
+   layer, so it can't be positioned against the word without anchor positioning —
+   it sits at the bottom of the screen instead, and light-dismiss closes it. */
+
+.glossary {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  vertical-align: baseline;
+  text-decoration: underline dashed var(--accent) 2px;
+  text-underline-offset: 0.25em;
+  cursor: help;
+}
+
+.glossary-card {
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.9rem 1.1rem;
+  background: var(--paper-raised);
+  border: 3px solid var(--rule);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.glossary-card:popover-open {
+  inset: auto;
+  bottom: 1.5rem;
+  left: 50%;
+  translate: -50%;
 }
 
 /* -------------------------------------------------------------- solution */

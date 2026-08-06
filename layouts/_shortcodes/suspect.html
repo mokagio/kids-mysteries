@@ -1,7 +1,12 @@
 {{- $number := add .Ordinal 1 -}}
 <li class="suspect">
   <span class="suspect__number" aria-hidden="true">{{ $number }}</span>
-  <h3 class="suspect__name">{{ .Get "name" }}</h3>
-  {{ with .Get "role" }}<p class="suspect__role">{{ . }}</p>{{ end }}
+  <div class="suspect__head">
+    {{ with .Get "emoji" }}<span class="suspect__emoji" aria-hidden="true">{{ . }}</span>{{ end }}
+    <div>
+      <h3 class="suspect__name">{{ .Get "name" }}</h3>
+      {{ with .Get "role" }}<p class="suspect__role">{{ . }}</p>{{ end }}
+    </div>
+  </div>
   <blockquote class="suspect__quote">{{ .Inner | markdownify }}</blockquote>
 </li>

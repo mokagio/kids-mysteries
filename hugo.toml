@@ -12,8 +12,11 @@ disableKinds = ["taxonomy", "term"]
 [params]
 tagline = "Big mysteries for small detectives"
 
+# The `word` shortcode emits a popover button, and it has to survive the
+# `markdownify` call inside `clues` and `solution` — which strips raw HTML unless
+# this is on. All content here is first-party.
 [markup.goldmark.renderer]
-unsafe = false
+unsafe = true
 
 [markup.tableOfContents]
 startLevel = 2
