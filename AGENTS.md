@@ -15,6 +15,9 @@ Pushing to `main` deploys to <https://mokagio.github.io/kids-mysteries/> via
 The site is served from a subpath, so link to the home page with
 `site.Home.RelPermalink` — `"/" | relURL` renders as `/` and lands on the domain
 root instead.
+For the same reason `public/` renders unstyled if you serve it at a localhost
+root: its asset paths start with `/kids-mysteries/`.
+Preview with `hugo server`, or build a throwaway copy with `--baseURL /`.
 
 ## House rules
 
