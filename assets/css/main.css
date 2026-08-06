@@ -438,9 +438,9 @@ a {
 
 /* -------------------------------------------------------------- glossary */
 
-/* Tap a hard word, get a definition card. `popover` puts the card in the top
-   layer, so it can't be positioned against the word without anchor positioning —
-   it sits at the bottom of the screen instead, and light-dismiss closes it. */
+/* Tap a hard word, get a definition card. `popover` gives light-dismiss and
+   Escape for free. Two layouts: a centred modal everywhere, and — where anchor
+   positioning is supported — a card floating against the word itself. */
 
 .glossary {
   padding: 0;
@@ -466,11 +466,27 @@ a {
   line-height: 1.5;
 }
 
-.glossary-card:popover-open {
-  inset: auto;
-  bottom: 1.5rem;
-  left: 50%;
-  translate: -50%;
+/* The UA already centres a popover on both axes, so the modal is this shade
+   over the page and nothing else. */
+.glossary-card::backdrop {
+  background: rgb(43 36 25 / 40%);
+}
+
+/* `position-area` places the card against the word, but only once the UA's
+   `inset: 0` and auto margins are cleared — left in, they stretch the card
+   across the region instead of parking it above the word. */
+@supports (position-area: top) {
+  .glossary-card:popover-open {
+    position-area: top;
+    position-try-fallbacks: flip-block;
+    inset: auto;
+    margin: 0 0.5rem 0.5rem;
+  }
+
+  /* Shading the page suits a modal, not a card sitting beside a word. */
+  .glossary-card::backdrop {
+    background: none;
+  }
 }
 
 /* -------------------------------------------------------------- solution */

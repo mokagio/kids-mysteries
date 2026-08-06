@@ -111,10 +111,15 @@ It hides spoilers from a reader, not from anyone who opens the page source.
 opens it, a tap anywhere else dismisses it, and Escape closes it — all native, no
 JavaScript.
 
-A popover lives in the top layer, so it cannot be positioned against the word
-without CSS anchor positioning, which isn't broadly supported yet.
-The card sits at the bottom of the screen instead.
-Revisit when anchor positioning lands in Firefox.
+A popover lives in the top layer, so placing it against the word takes CSS anchor
+positioning.
+Where that is supported the card floats just above the word, flipping below it
+when the word is near the top of the screen.
+Where it isn't — Firefox, for now — the card falls back to a centred modal over a
+shaded page.
+
+Anchor names are per word, so `word.html` emits them as inline styles built from
+the same `$id` it gives the popover.
 
 ## Design
 

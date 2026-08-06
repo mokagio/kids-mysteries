@@ -1,5 +1,8 @@
 {{- $word := trim .Inner " " -}}
 {{- $id := printf "def-%s" (urlize $word) -}}
+{{- /* One anchor name per pair is what ties a card to its own word, and only the
+       template knows the word — hence inline styles rather than a rule. */ -}}
+{{- $anchor := printf "--%s" $id -}}
 {{- /* One printf, trimmed both ends: any stray newline here lands as a space in
        the middle of a sentence, right before the punctuation. */ -}}
-{{- printf `<button type="button" class="glossary" popovertarget="%s">%s</button><span class="glossary-card" id="%s" popover><b>%s</b> — %s</span>` $id $word $id $word (.Get "def") | safeHTML -}}
+{{- printf `<button type="button" class="glossary" popovertarget="%s" style="anchor-name:%s">%s</button><span class="glossary-card" id="%s" style="position-anchor:%s" popover><b>%s</b> — %s</span>` $id $anchor $word $id $anchor $word (.Get "def") | safeHTML -}}
