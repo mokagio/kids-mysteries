@@ -34,7 +34,9 @@ Simple vocabulary is the constraint that bites hardest.
 Short sentences, everyday words, no clause stacking.
 If a word needs explaining it must be one of the three, or it doesn't go in.
 
-A skill for generating new cases will come later; for now they're written by hand.
+`/add-mystery` writes a new case to these rules.
+`scripts/check-case.sh <file>` enforces the countable ones, and
+`bats test/check-case.bats` covers the checker itself.
 
 ## Adding a mystery
 
