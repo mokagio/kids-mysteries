@@ -1,4 +1,8 @@
 ---
+# Shelved, not deleted. Written before the house rules in AGENTS.md: it has four
+# suspects and seven clues, and the alibis turn on reading a clock. Worth
+# reworking to three suspects and five clues once the kids are ready for it.
+draft: true
 title: The Silver Cup at the Summer Fete
 date: 2026-08-06
 setting: The Bexley village fete
