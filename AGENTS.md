@@ -10,6 +10,12 @@ hugo --gc --minify       # production build into public/
 
 No npm, no theme, no dependencies — everything is in `layouts/` and `assets/`.
 
+Pushing to `main` deploys to <https://mokagio.github.io/kids-mysteries/> via
+`.github/workflows/deploy.yml`.
+The site is served from a subpath, so link to the home page with
+`site.Home.RelPermalink` — `"/" | relURL` renders as `/` and lands on the domain
+root instead.
+
 ## House rules
 
 These are tuned to the kids reading the site right now.
