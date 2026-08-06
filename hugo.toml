@@ -10,7 +10,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
-tagline = "Big mysteries for small detectives"
+tagline = "Small mysteries for big detectives in the making"
 
 # The `word` shortcode emits a popover button, and it has to survive the
 # `markdownify` call inside `clues` and `solution` — which strips raw HTML unless
