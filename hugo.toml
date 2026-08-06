@@ -1,6 +1,6 @@
 baseURL = "/"
 locale = "en-au"
-title = "The Case Files"
+title = "The Young Detectives Club"
 
 # Without this, a front matter `date: 2026-08-06` is read as UTC midnight, which is
 # still in the future here — and Hugo drops future-dated pages from the build.
@@ -10,7 +10,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
-tagline = "Mysteries for budding detectives"
+tagline = "Big mysteries for small detectives"
 
 [markup.goldmark.renderer]
 unsafe = false
