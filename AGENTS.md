@@ -50,7 +50,7 @@ One file per case: `content/mysteries/<slug>.md`.
 title: The Lighthouse at Gull Point
 date: 2026-08-05         # shown as "Filed", and orders the home page
 setting: A lighthouse on a tidal rock
-victim: Captain Sloat    # or `missing:` for a theft — the header labels itself
+victim: Captain Sloat    # or `missing:` / `incident:` — see "What the crime can be"
 difficulty: 2            # 1–3, rendered as magnifying glasses
 ---
 
@@ -108,8 +108,25 @@ No wounds, no pain, no fear, nothing that lingers after the sentence ends.
 The victim is a grown-up the reader has never met — never a child, never an
 animal, never anybody's parent.
 
-Thefts and mischief are fine too. Just pick whichever makes the better puzzle,
-rather than whichever feels safer.
+### Take turns
+
+Three kinds, and the collection should mix them:
+
+| Kind | Front matter | Reads as |
+| --- | --- | --- |
+| A death | `victim:` | Victim |
+| Something taken | `missing:` | Missing |
+| Something let loose, broken, swapped or faked | `incident:` | Incident |
+
+Exactly one per case. Before inventing a premise, look at what the last few were:
+
+```sh
+grep -H -m1 -E '^(victim|missing|incident):' content/mysteries/*.md
+```
+
+Don't repeat the kind the most recent case used, and if one kind already covers
+more than half the published cases, pick a different one.
+Reach for a death when it's been a while — that's the one that gets skipped.
 
 ## Writing a case that holds up
 

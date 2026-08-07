@@ -35,14 +35,23 @@ Ignore `the-lighthouse-at-gull-point.md` — it predates the rules and breaks th
 If the user gave one, use it. If not, invent one and say what you picked in a
 sentence; don't interrogate them for a theme.
 
-**A murder is the best kind, and the one the kids ask for.** An earlier version of
+**Check what the last few cases were before you invent anything:**
+
+```sh
+grep -H -m1 -E '^(victim|missing|incident):' content/mysteries/*.md
+```
+
+A death (`victim:`), something taken (`missing:`) and something let loose, broken
+or faked (`incident:`) should take turns. Don't repeat the kind the most recent
+case used.
+
+**A murder is welcome, and it's the one that gets skipped.** An earlier version of
 this skill said a theft "suits the age better", and three cases in a row came out
 as thefts because of it. It doesn't. Read "What the crime can be" in `AGENTS.md`
 for where the line sits: bloodless, method named in a few plain words, victim a
 grown-up the reader has never met.
 
-Theft, sabotage and mischief are all fine as well. Choose on which makes the
-better puzzle, never on which feels safer.
+Choose on which makes the better puzzle, never on which feels safer.
 
 Keep the world small and concrete: a school, a fete, a farm, a swimming pool, a
 campsite, a boat. Three people who were nearby, all with a reason to be.
