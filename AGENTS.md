@@ -93,6 +93,24 @@ before the next full stop.
 Set `draft: true` to shelve a case that isn't working, rather than deleting it,
 and say why in a comment above the key.
 
+## What the crime can be
+
+**Murder is welcome, and the kids like it best.** Don't reach for a theft to be
+safe — that's how the collection ended up lopsided.
+
+Keep it bloodless. Say what was found and where, name the method in a few plain
+words, and stop:
+
+> Captain Sloat was found at the top of his lighthouse, 199 steps up, beside a
+> brass telescope with a dent in it.
+
+No wounds, no pain, no fear, nothing that lingers after the sentence ends.
+The victim is a grown-up the reader has never met — never a child, never an
+animal, never anybody's parent.
+
+Thefts and mischief are fine too. Just pick whichever makes the better puzzle,
+rather than whichever feels safer.
+
 ## Writing a case that holds up
 
 Two suspects are cleared by a clue a child can check.

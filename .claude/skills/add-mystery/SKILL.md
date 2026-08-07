@@ -35,10 +35,17 @@ Ignore `the-lighthouse-at-gull-point.md` — it predates the rules and breaks th
 If the user gave one, use it. If not, invent one and say what you picked in a
 sentence; don't interrogate them for a theme.
 
-Something is taken, eaten, broken, or moved. A death is allowed — the lighthouse
-case is a murder — but a theft carries the same logic and suits the age better.
+**A murder is the best kind, and the one the kids ask for.** An earlier version of
+this skill said a theft "suits the age better", and three cases in a row came out
+as thefts because of it. It doesn't. Read "What the crime can be" in `AGENTS.md`
+for where the line sits: bloodless, method named in a few plain words, victim a
+grown-up the reader has never met.
+
+Theft, sabotage and mischief are all fine as well. Choose on which makes the
+better puzzle, never on which feels safer.
+
 Keep the world small and concrete: a school, a fete, a farm, a swimming pool, a
-campsite. Three people who were nearby, all with a reason to be.
+campsite, a boat. Three people who were nearby, all with a reason to be.
 
 ## Step 2 — Build the shape
 
