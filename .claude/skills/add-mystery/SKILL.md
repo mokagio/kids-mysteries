@@ -93,6 +93,9 @@ one of these:
   tide, a machine, a timestamp).
 - **Nothing outside the page.** No knowledge a child hasn't been given in the
   case itself.
+- **No clue that takes two steps to explain.** "Who Let the Lambs Out?" timestamps
+  the barn with a split feed sack — sound, and too convoluted to enjoy. A blunt
+  clue that lands beats a clever one that has to be unpacked.
 
 Also check the culprit has a reason. It can land in the solution as the last
 line — it doesn't have to be a clue — but a thief with no motive reads as random.

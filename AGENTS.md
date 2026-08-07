@@ -135,6 +135,13 @@ The third is caught contradicting their own statement, with one physical clue to
 confirm it.
 That's the whole shape — don't add a second inference on top of the elimination.
 
+**Keep each clue a single plain fact.**
+If a clue needs a sentence of setup before it means anything — a spill that
+timestamps who walked in, a rule about what counts as crossing what — it is too
+clever, however sound it is.
+A reader should be able to hold all five clues in their head at once.
+When a mechanism takes two steps to explain, throw it out and find a blunter one.
+
 Test every alibi against the clock before publishing.
 Establish when the crime *started* as well as when it was discovered, or a suspect
 whose alibi begins a few minutes late is left with an unexamined gap.
