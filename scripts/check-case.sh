@@ -16,6 +16,7 @@ status=0
 fail() {
   echo "  ✗ $1"
   status=1
+  file_status=1
 }
 
 # Occurrences, not matching lines: a sentence can carry two `{{< word >}}` calls.
@@ -33,6 +34,7 @@ clue_block() {
 
 for file in "$@"; do
   echo "$file"
+  file_status=0
 
   if [ ! -f "$file" ]; then
     fail "no such file"
@@ -45,8 +47,8 @@ for file in "$@"; do
     grep -q "^${key}:" <<<"$fm" || fail "front matter is missing \`${key}:\`"
   done
 
-  subjects=$(grep -c '^\(victim\|missing\):' <<<"$fm" || true)
-  [ "$subjects" -eq 1 ] || fail "front matter needs exactly one of \`victim:\` or \`missing:\` (found $subjects)"
+  subjects=$(grep -c '^\(victim\|missing\|incident\):' <<<"$fm" || true)
+  [ "$subjects" -eq 1 ] || fail "front matter needs exactly one of \`victim:\`, \`missing:\` or \`incident:\` (found $subjects)"
 
   difficulty=$(sed -n 's/^difficulty: *\([0-9]\).*/\1/p' <<<"$fm")
   case "$difficulty" in
@@ -71,7 +73,7 @@ for file in "$@"; do
 
   grep -q '{{< solution culprit="' "$file" || fail "solution shortcode needs culprit=\""
 
-  [ "$status" -eq 0 ] && echo "  ✓ house rules"
+  [ "$file_status" -eq 0 ] && echo "  ✓ house rules"
 done
 
 exit "$status"

@@ -78,11 +78,23 @@ EOF
   [[ "$output" == *"exactly one of"* ]]
 }
 
-@test "neither victim nor missing is rejected" {
+@test "none of victim, missing or incident is rejected" {
   perl -ni -e 'print unless /^missing:/' "$CASE"
   run "$CHECK" "$CASE"
   [ "$status" -eq 1 ]
   [[ "$output" == *"exactly one of"* ]]
+}
+
+@test "incident alone is accepted" {
+  perl -pi -e 's/^missing: .*$/incident: Something was let loose/' "$CASE"
+  run "$CHECK" "$CASE"
+  [ "$status" -eq 0 ]
+}
+
+@test "victim alone is accepted" {
+  perl -pi -e 's/^missing: .*$/victim: Someone Nobody Knows/' "$CASE"
+  run "$CHECK" "$CASE"
+  [ "$status" -eq 0 ]
 }
 
 @test "a difficulty outside 1-3 is rejected" {
@@ -97,6 +109,12 @@ EOF
   run "$CHECK" "$CASE"
   [ "$status" -eq 1 ]
   [[ "$output" == *"missing \`setting:\`"* ]]
+}
+
+@test "a passing file is still marked passing after a failing one" {
+  run "$CHECK" "$REPO/content/mysteries/the-lighthouse-at-gull-point.md" "$CASE"
+  [ "$status" -eq 1 ]
+  [[ "$output" == *"✓ house rules"* ]]
 }
 
 @test "a file that does not exist is reported" {

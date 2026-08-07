@@ -2,7 +2,7 @@
 title: Who Let the Lambs Out?
 date: 2026-08-07
 setting: Wren Farm
-missing: Six lambs, out of a shut pen
+incident: Six lambs let out of a shut pen
 difficulty: 3
 ---
 
