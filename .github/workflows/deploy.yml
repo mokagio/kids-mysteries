@@ -3,6 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Hugo drops future-dated pages, so a case written ahead of time only appears
+  # once something rebuilds. 15:00 UTC is just after midnight in Melbourne.
+  # GitHub suspends schedules after 60 days without a commit — push to revive.
+  schedule:
+    - cron: 0 15 * * *
   workflow_dispatch:
 
 permissions:
